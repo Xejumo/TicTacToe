@@ -8,9 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TicTacToeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TicTacToeApplication.class, args);
-        TicTacToe game = new TicTacToe();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wybierz rozmiar planszy (3x3 lub 10x10):");
+        int sizeChoice = scanner.nextInt();
+        TicTacToe game = new TicTacToe(sizeChoice);
+
         game.playGameWithComputer();
+
+        scanner.close();
     }
 
 }
